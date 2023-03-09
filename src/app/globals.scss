@@ -1,24 +1,70 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
+@use "../scss" as *;
 
-  &::before,
-  &::after {
-    box-sizing: border-box;
-  }
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
 }
 
+html,
 body {
-  font-family: sans-serif;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+	font-family: "Poppins", sans-serif;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+@include mq(tablet) {
+	html {
+		font-size: 17px;
+	}
+
+	.container {
+		max-width: 750px;
+		margin: auto;
+	}
+}
+
+@include mq(tablet-wide) {
+	.container {
+		max-width: 980px;
+	}
+}
+
+@include mq(desktop) {
+	.container {
+		max-width: 1200px;
+	}
+}
+
+@include mq(desktop-wide) {
+	html {
+		font-size: 18px;
+	}
+
+	.container {
+		max-width: 1350px;
+	}
 }
 
 button,
 input,
 textarea,
 select {
-  font: inherit;
+	font: inherit;
+	width: 100%;
+	display: block;
+	border-radius: 4px;
+
+	&:focus,
+	&:active {
+		outline: $sandy-brown solid;
+	}
 }
 
 p,
@@ -28,28 +74,55 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+	overflow-wrap: break-word;
 }
 
 img,
 video,
 canvas,
 svg {
-  max-width: 100%;
+	max-width: 100%;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 button {
-  border: none;
-  outline: none;
+	border: none;
+	outline: none;
+	background: none;
+	cursor: pointer;
+}
+
+body {
+	background-color: $white;
+}
+
+.container {
+	padding: 0 15px;
+}
+
+// ------ Scrollbar style
+
+body::-webkit-scrollbar {
+	width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+	background-color: $white;
+	border-left: 1px solid $cultured;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: hls(0, 0%, 80%);
+	border: 3px solid $white;
+	border-radius: 10px;
 }

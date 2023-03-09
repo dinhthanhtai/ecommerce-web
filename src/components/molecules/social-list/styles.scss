@@ -1,0 +1,20 @@
+@use "../../../scss/" as *;
+
+.m-social {
+	@include flex(center, center);
+	gap: 10px;
+
+	&-link {
+		display: flex;
+		background: hsl(0, 0%, 95%);
+		color: $sonic-silver;
+		padding: 5px;
+		border-radius: 5px;
+		transition: $transition-timing;
+
+		&:hover {
+			background-color: $salmon-pink;
+			color: $white;
+		}
+	}
+}

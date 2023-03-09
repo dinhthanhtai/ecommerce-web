@@ -1,0 +1,9 @@
+@use "../../../scss/" as *;
+
+.m-search {
+	@include flex(center, unset, column);
+
+	&-field {
+		width: 100%;
+	}
+}

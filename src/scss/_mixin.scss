@@ -1,0 +1,37 @@
+@mixin flex($align-item, $justify-content, $direction: row) {
+	display: flex;
+	flex-direction: $direction;
+	align-items: $align-item;
+	justify-content: $justify-content;
+}
+
+@mixin pseudo($display: "block", $pos: absolute, $content: "") {
+	content: $content;
+	display: $display;
+	position: $pos;
+}
+
+@mixin input-placeholder {
+	&.placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+	&::-webkit-input-placeholder {
+		@content;
+	}
+}
+
+@mixin text-truncate($truncate-boundary) {
+	max-width: $truncate-boundary;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

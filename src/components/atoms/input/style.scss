@@ -1,0 +1,27 @@
+@use "../../../scss/" as *;
+
+.a-input {
+	position: relative;
+
+	&-main {
+		font-size: 0.875rem;
+		color: $onyx;
+		padding: 10px 15px;
+		border: 1px solid $cultured;
+		border-radius: 10px;
+		padding-right: 50px;
+		outline: $sandy-brown solid;
+
+		&::-webkit-search-cancel-button {
+			display: none;
+		}
+	}
+
+	&-suffix {
+		position: absolute;
+		top: 50%;
+		right: 14px;
+		transform: translateY(-45%);
+		cursor: pointer;
+	}
+}

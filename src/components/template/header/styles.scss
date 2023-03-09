@@ -1,0 +1,121 @@
+@use "../../../scss/" as *;
+
+.t-header {
+	&-top {
+		&-alert {
+			color: $sonic-silver;
+			font-size: 0.75rem;
+			text-transform: uppercase;
+			display: none;
+
+			b {
+				font-weight: 500;
+			}
+		}
+
+		&-actions,
+		&-social {
+			display: none;
+		}
+	}
+
+	&-main {
+		padding: 20px 0;
+		border-bottom: 1px solid $cultured;
+
+		&-actions {
+			display: none;
+		}
+	}
+
+	@include mq("phone-wide") {
+		&-top {
+			display: block;
+			padding: 10px 0;
+			border-bottom: 1px solid $cultured;
+
+			&-alert {
+				display: block;
+			}
+		}
+	}
+
+	@include mq("phablet") {
+		&-top {
+			.container {
+				@include flex(center, space-between);
+			}
+
+			&-actions {
+				@include flex(center, unset);
+				gap: 10px;
+
+				select {
+					border: none;
+					display: block;
+					min-width: 80px;
+					padding: 5px 0;
+					font: inherit;
+					color: $sonic-silver;
+					font-size: $fs-8;
+					text-transform: uppercase;
+					cursor: pointer;
+					transition: all $transition-timing;
+
+					&:hover {
+						color: $eerie-black;
+					}
+				}
+			}
+		}
+
+		&-main {
+			&-search {
+				@include flex(center, space-between);
+				gap: 120px;
+			}
+		}
+	}
+
+	@include mq(tablet-wide) {
+		&-top {
+			&-social {
+				display: flex;
+			}
+		}
+
+		&-main {
+			.container {
+				@include flex(center, space-between);
+			}
+
+			&-search {
+				flex: 0.9;
+				gap: 65px;
+			}
+
+			&-actions {
+				@include flex(center, unset);
+				gap: 20px;
+
+				&-btn {
+					position: relative;
+					font-size: 35px;
+					color: $onyx;
+					padding: 5px;
+
+					&-count {
+						position: absolute;
+						background-color: $bittersweet;
+						color: white;
+						font-size: 12px;
+						font-weight: 500;
+						line-height: 1;
+						padding: 2px 4px;
+						border-radius: 20px;
+					}
+				}
+			}
+		}
+	}
+}
